@@ -91,14 +91,21 @@ var questions = [
   ];
 
 var startButton = document.getElementById("start-btn");
+var nextButton = document.getElementById("next-btn");
+var answerBtnPad = document.getElementById("answer-btn-pad");
 
 startButton.addEventListener('click', startQuiz);
 
 function startQuiz() {
     console.log("Quiz started")
+    startButton.classList.add("hide");
+    nextButton.classList.remove("hide");
+    answerBtnPad.classList.remove("hide");
+    nextQuestion()
 };
 
 function nextQuestion () {
+    console.log("Next question loaded")
 
 };
 
