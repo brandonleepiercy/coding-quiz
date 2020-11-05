@@ -176,6 +176,8 @@ function userKickOut () {
 };
 
 function saveHighScores() {
+    userNames = userNames.concat(JSON.parse(localStorage.getItem("Usernames")));
+    highScores = highScores.concat(JSON.parse(localStorage.getItem("Scores")));
     userNames.push(userName);
     highScores.push(currentScore);
     console.log(userNames);
