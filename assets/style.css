@@ -1,6 +1,5 @@
 #info-top {
     background-color: ivory;
-    text-align: center;
 }
 #quiz-container {
     background-color: goldenrod;
@@ -8,4 +7,23 @@
 #quiz-button {
     margin: 0 auto;
     align-items: center;
+}
+.text-center {
+    justify-content: center;
+}
+#quiz-status {
+    padding: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#quiz-block {
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#quiz-button {
+    padding: 10px;
+    margin: 20;
 }
