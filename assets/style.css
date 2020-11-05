@@ -1,0 +1,11 @@
+#info-top {
+    background-color: ivory;
+    text-align: center;
+}
+#quiz-container {
+    background-color: goldenrod;
+}
+#quiz-button {
+    margin: 0 auto;
+    align-items: center;
+}
