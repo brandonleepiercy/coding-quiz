@@ -160,4 +160,12 @@ $answerBtnPad.addEventListener('click', function(event){
 
 function userKickOut () {
     console.log("User kicked out to high scores page");
+    console.log("Score: " + currentScore);
+    var userName = prompt("Quiz complete. You scored a " + currentScore + " out of 90. Fill in your name to save your high score.");
+    console.log(userName);
+    displayHighScores();
+};
+
+function displayHighScores() {
+
 };
