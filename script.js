@@ -90,24 +90,36 @@ var questions = [
     },
   ];
 
-var startButton = document.getElementById("start-btn");
-var nextButton = document.getElementById("next-btn");
-var answerBtnPad = document.getElementById("answer-btn-pad");
+var $startButton = document.getElementById("start-btn");
+var $nextButton = document.getElementById("next-btn");
+var $answerBtnPad = document.getElementById("answer-btn-pad");
+var $currentScore = document.getElementById("current-score");
+var $quizStatusText = document.getElementById("quiz-status-text");
+var $quizBlockText = document.getElementById("quiz-block-text");
+var currentQuestion = 0;
 
-startButton.addEventListener('click', startQuiz);
+$startButton.addEventListener('click', startQuiz);
+$nextButton.addEventListener('click', nextQuestion);
 
 function startQuiz() {
     console.log("Quiz started")
-    startButton.classList.add("hide");
-    nextButton.classList.remove("hide");
-    answerBtnPad.classList.remove("hide");
+    $startButton.classList.add("hide");
+    $nextButton.classList.remove("hide");
+    $answerBtnPad.classList.remove("hide");
+    $currentScore.classList.remove("hide");
     nextQuestion()
 };
 
 function nextQuestion () {
-    console.log("Next question loaded")
-
+    console.log("Next question loaded");
+    showQuestion(questions[currentQuestion]);
+    currentQuestion++;
+    console.log(currentQuestion);
 };
+
+function showQuestion () {
+    $quizBlockText.innerText = questions[currentQuestion].question;
+}
 
 function selectAnswer () {
 
