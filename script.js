@@ -117,9 +117,14 @@ function startQuiz() {
 };
 
 function nextQuestion () {
-    console.log("Next question loaded");
-    showQuestion(questions[currentQuestion]);
-    console.log(currentQuestion);
+    if(currentQuestion>8) {
+        console.log("No more questions, sending to high scores page");
+        userKickOut();        
+    } else {
+        console.log("Next question loaded");
+        showQuestion(questions[currentQuestion]);
+        console.log(currentQuestion);
+    };
 };
 
 function showQuestion () {
@@ -127,9 +132,13 @@ function showQuestion () {
     $aButton.innerText = questions[currentQuestion].answers.a;
     $bButton.innerText = questions[currentQuestion].answers.b;
     $cButton.innerText = questions[currentQuestion].answers.c;
-    $dButton.innerText = questions[currentQuestion].answers.d;
+    if (!questions[currentQuestion].answers.d) {
+        $dButton.classList.add("hide");
+    } else {
+        $dButton.innerText = questions[currentQuestion].answers.d;  
+    };
 
-}
+};
 
 $answerBtnPad.addEventListener('click', function(event){
     event.preventDefault();
@@ -146,4 +155,9 @@ $answerBtnPad.addEventListener('click', function(event){
     };
     currentQuestion++
     console.log(currentQuestion);
-})
+    nextQuestion();
+});
+
+function userKickOut () {
+    console.log("User kicked out to high scores page");
+};
