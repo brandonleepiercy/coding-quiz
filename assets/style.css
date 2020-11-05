@@ -8,9 +8,7 @@
     margin: 0 auto;
     align-items: center;
 }
-.text-center {
-    justify-content: center;
-}
+
 #quiz-status {
     padding: 30px;
     margin-top: 10px;
@@ -23,7 +21,20 @@
     margin: 0 auto;
 }
 
-#quiz-button {
-    padding: 10px;
-    margin: 20;
+#answer-btns {
+    padding:10px;
+    margin:20;
+}
+
+#nav-btn {
+    padding:10px;
+    margin:20;
+}
+
+.text-center {
+    justify-content: center;
+}
+
+.hide {
+    display:none;
 }

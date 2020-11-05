@@ -1,8 +1,3 @@
-var score = 0;
-var timeLeft = 90000;
-var quizContainer = document.getElementById("quiz-container");
-var quizButton = document.getElementById("quiz-button");
-var highScores = []
 var questions = [
     {
       question: "When adding boost to an engine it is common to....",
@@ -94,3 +89,19 @@ var questions = [
         correctAnswer: "b"
     },
   ];
+
+var startButton = document.getElementById("start-btn");
+
+startButton.addEventListener('click', startQuiz);
+
+function startQuiz() {
+    console.log("Quiz started")
+};
+
+function nextQuestion () {
+
+};
+
+function selectAnswer () {
+
+};
