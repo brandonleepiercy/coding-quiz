@@ -103,9 +103,17 @@ var $aButton = document.getElementById("a");
 var $bButton = document.getElementById("b");
 var $cButton = document.getElementById("c");
 var $dButton = document.getElementById("d");
+var highScores = [];
+var userNames = [];
+var $highscoreBox = document.getElementById("highscore-container");
+var $nameList = document.getElementById("name-list");
+var $scoreList = document.getElementById("score-list");
+var $highscorePath = document.getElementById("highscores-path");
+
 
 $startButton.addEventListener('click', startQuiz);
 $nextButton.addEventListener('click', nextQuestion);
+$highscorePath.addEventListener('click', displayHighScores);
 
 function startQuiz() {
     console.log("Quiz started")
@@ -128,6 +136,7 @@ function nextQuestion () {
 };
 
 function showQuestion () {
+    $quizStatusText.innerText = ("Question " + (1+currentQuestion));
     $quizBlockText.innerText = questions[currentQuestion].question;
     $aButton.innerText = questions[currentQuestion].answers.a;
     $bButton.innerText = questions[currentQuestion].answers.b;
@@ -161,11 +170,36 @@ $answerBtnPad.addEventListener('click', function(event){
 function userKickOut () {
     console.log("User kicked out to high scores page");
     console.log("Score: " + currentScore);
-    var userName = prompt("Quiz complete. You scored a " + currentScore + " out of 90. Fill in your name to save your high score.");
+    userName = prompt("Quiz complete. You scored a " + currentScore + " out of 90. Fill in your name to save your high score.");
     console.log(userName);
+    saveHighScores();
+};
+
+function saveHighScores() {
+    userNames.push(userName);
+    highScores.push(currentScore);
+    console.log(userNames);
+    console.log(highScores);
+    localStorage.setItem("Usernames", JSON.stringify(userNames));
+    localStorage.setItem("Scores", JSON.stringify(highScores));
     displayHighScores();
 };
 
 function displayHighScores() {
-
+    $quizStatusText.innerText = ("High Scores");
+    $quizBlockText.classList.add("hide");
+    $highscoreBox.classList.remove("hide");
+    var updatedScoreList = JSON.parse(localStorage.getItem("Scores"));
+    var updatedNameList = JSON.parse(localStorage.getItem("Usernames"));
+    $nameList.innerHTML="";
+    $scoreList.innerHTML="";
+    var i;
+    for (i=0; i<updatedScoreList.length;i++) {
+        var newName = document.createElement("li");
+        newName.innerText = updatedNameList[i];
+        $nameList.appendChild(newName);
+        var newScore = document.createElement("li");
+        newScore.innerText = updatedScoreList[i];
+        $scoreList.appendChild(newScore);
+    };
 };
