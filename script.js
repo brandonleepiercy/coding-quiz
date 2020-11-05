@@ -122,6 +122,7 @@ function startQuiz() {
     $answerBtnPad.classList.remove("hide");
     $currentScore.classList.remove("hide");
     nextQuestion()
+    timer();
 };
 
 function nextQuestion () {
@@ -205,3 +206,19 @@ function displayHighScores() {
         $scoreList.appendChild(newScore);
     };
 };
+
+function timer(){
+    console.log("Timer started");
+    var sec = 90;
+    var timer = setInterval(function(){
+        document.getElementById('time-left').innerHTML= sec;
+        sec--;
+        if (sec < 0) {
+            clearInterval(timer);
+            alert("You ran out of time. You get no score.");
+            displayHighScores();
+        } if (currentQuestion > 8) {
+            clearInterval(timer);
+        };
+    }, 1000);
+}
