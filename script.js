@@ -217,6 +217,7 @@ function timer(){
             clearInterval(timer);
             alert("You ran out of time. You get no score.");
             displayHighScores();
+            $answerBtnPad.classList.add("hide");
         } if (currentQuestion > 8) {
             clearInterval(timer);
         };
