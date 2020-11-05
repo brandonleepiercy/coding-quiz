@@ -1,8 +1,10 @@
 #info-top {
     background-color: ivory;
+    padding: 20px;
 }
 #quiz-container {
-    background-color: goldenrod;
+    background-color: blanchedalmond;
+    padding:20px;
 }
 #quiz-button {
     margin: 0 auto;
@@ -27,7 +29,7 @@
 }
 
 #nav-btn {
-    padding:10px;
+    padding:25px;
     margin:20;
 }
 
@@ -41,4 +43,8 @@
 
 .hide {
     display:none;
+}
+
+body {
+    background-image: url("https://i.redd.it/7aglej0ze4j51.jpg");
 }
