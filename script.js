@@ -96,7 +96,13 @@ var $answerBtnPad = document.getElementById("answer-btn-pad");
 var $currentScore = document.getElementById("current-score");
 var $quizStatusText = document.getElementById("quiz-status-text");
 var $quizBlockText = document.getElementById("quiz-block-text");
+var $currentScoreValue = document.getElementById("current-score-value");
 var currentQuestion = 0;
+var currentScore = 0;
+var $aButton = document.getElementById("a");
+var $bButton = document.getElementById("b");
+var $cButton = document.getElementById("c");
+var $dButton = document.getElementById("d");
 
 $startButton.addEventListener('click', startQuiz);
 $nextButton.addEventListener('click', nextQuestion);
@@ -113,14 +119,31 @@ function startQuiz() {
 function nextQuestion () {
     console.log("Next question loaded");
     showQuestion(questions[currentQuestion]);
-    currentQuestion++;
     console.log(currentQuestion);
 };
 
 function showQuestion () {
     $quizBlockText.innerText = questions[currentQuestion].question;
+    $aButton.innerText = questions[currentQuestion].answers.a;
+    $bButton.innerText = questions[currentQuestion].answers.b;
+    $cButton.innerText = questions[currentQuestion].answers.c;
+    $dButton.innerText = questions[currentQuestion].answers.d;
+
 }
 
-function selectAnswer () {
-
-};
+$answerBtnPad.addEventListener('click', function(event){
+    event.preventDefault();
+    console.log(questions[currentQuestion].correctAnswer);
+    console.log(event.target.id);
+    if(event.target.matches("button")){
+        if(questions[currentQuestion].correctAnswer===event.target.id) {
+            currentScore+=10;
+            $currentScoreValue.innerText=currentScore.toString();
+            console.log("Answer correct");
+        } else {
+            console.log("Answer incorrect");
+        };
+    };
+    currentQuestion++
+    console.log(currentQuestion);
+})
