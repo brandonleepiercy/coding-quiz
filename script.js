@@ -35,33 +35,62 @@ var questions = [
       correctAnswer: "a"
     },
     {
-        question: "What does OBD-II stand for?",
+        question: "What will make you fail California smog?",
         answers: {
-          a: "on-board diagnostics",
-          b: "operating bank detection",
-          c: "on-board detection",
-          d: "operating bank diagnostics"
+          a: "Muffler delete",
+          b: "Resonator delete",
+          c: "Racing intake",
+          d: "High-flow downpipe"
         },
-        correctAnswer: "a"
+        correctAnswer: "d"
     },
     {
-        question: "What does OBD-II stand for?",
+        question: "Forced induction systems produce more horsepower by",
         answers: {
-          a: "on-board diagnostics",
-          b: "operating bank detection",
-          c: "on-board detection",
-          d: "operating bank diagnostics"
+          a: "Forcing more fuel into the combustion chamber",
+          b: "Speeding up engine revolution",
+          c: "Forcing more heat into the combustion chamber",
+          d: "Forcing more air into the combustion chamber"
         },
-        correctAnswer: "a"
+        correctAnswer: "d"
     },
     {
-        question: "What does OBD-II stand for?",
+        question: "A turbocharger is powered by _____, while a supercharger is powered by",
         answers: {
-          a: "on-board diagnostics",
-          b: "operating bank detection",
-          c: "on-board detection",
-          d: "operating bank diagnostics"
+          a: "belts and pulleys; gases",
+          b: "gases; belts and pulleys",
+          c: "oil cooling, water cooling",
+          d: "nitrous; belts and pulleys"
         },
-        correctAnswer: "a"
-    }
+        correctAnswer: "b"
+    },
+    {
+        question: "Which of the following is not a common suspension component?",
+        answers: {
+          a: "Swaybars",
+          b: "Bushings",
+          c: "Gaskets",
+          d: "Endlinks"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "Which of the following is unique to forward wheel drive?",
+        answers: {
+          a: "Differential",
+          b: "CV Joints",
+          c: "Coilover suspension",
+          d: "Power Steering"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Car A has a large single turbo kit producing 600whp and Car B has a sequential turbo kit with two smaller turbines, also producing 600 whp. The cars are otherwise identical. In a straight line which car will accelerate faster?",
+        answers: {
+          a: "Car A",
+          b: "Car B",
+          c: "Neither",
+        },
+        correctAnswer: "b"
+    },
   ];
